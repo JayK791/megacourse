@@ -135,3 +135,44 @@ def foo(lst):
     return [i if isinstance(i, int) else 0 for i in lst]
 
 print(foo([99, 'no date', 95, 94, 'no date']))
+
+
+def mean(*args):
+    return sum(args) / len(args)
+
+
+def mean(**kwargs):
+    return kwargs
+
+print(mean(a=1, b=2, c=3))
+
+# keyward arguments -> eg. a=1, b=2 ... return dictionary
+
+myfile = open("fruits.txt")
+print(myfile.read()) #show content in fruits.txt
+
+content = myfile.read()
+print(content)
+print(content) #this will print myfile twice
+
+myfile.close() #close file -> you can't do actioin with myfile
+
+with open("fruits.txt") as myfile:
+    content = myfile.read() #no need to close file
+
+with open("files/fruits.txt") as myfile:
+    content = myfile.read() #when fruits.txt isn't in the same folder
+
+with open("files/vegetables.txt", "w") as myfile:
+    myfile.write("Tomato") #"w" -> write. create new file. if you apply it to exist file, it'll be overwritten
+    myfile.write("Onion/nPotato/nCucumber")
+
+with open("files/vegetables.txt", "x") as myfile:
+    myfile.write("Tomato") #"x" -> create new file. exist file name  can't be used
+    myfile.write("Onion/nPotato/nCucumber")
+
+with open("files/vegetables.txt", "a") as myfile:
+    myfile.write("Tomato") #"a" -> add items in the selected file. "a+" -> read and write 
+    mtfile.seek(0) # move cursor to 0
+    myfile.write("Onion/nPotato/nCucumber")
+
